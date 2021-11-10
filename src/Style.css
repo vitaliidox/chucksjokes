@@ -1,0 +1,19 @@
+.randomJoke{
+    font-weight: bold;
+    text-align: center;
+
+}
+.randomJoke:hover{
+    text-decoration: none;
+    
+}
+
+.body{
+    background-image: url('https://cdn.flickeringmyth.com/wp-content/uploads/2020/03/chuck-norris.jpg');
+    background-size: 100%;
+}
+
+
+.random{
+    justify-content: center!important;
+}

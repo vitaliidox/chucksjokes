@@ -1,5 +1,7 @@
 import React, {useEffect, useState, useContext} from "react";
-import CreateURL from "./URL/CreateURL";
+import GetRandomJoke from "./URL/GetRandomJoke";
+import NumberOfJokes from "./URL/NumberOfJokes";
+// import GetCategories from "./URL/GetCategories"
 
 
 
@@ -7,29 +9,40 @@ import CreateURL from "./URL/CreateURL";
 function GetApi(props) {
     const [randomJoke, setRandomJoke] = useState()
     const [joke, setJokes] = useState(false)
+    const [active, setActive] = useState('')
     useEffect(()=>{
-        <CreateURL path='random' joke={joke}/>
-    },[])
+        <GetRandomJoke path='random' joke={joke}/>
 
+    },[])
+        function ActivateCategories() {
+            if(active==='active'){
+                setActive('')
+            }else{setActive('active')}
+            console.log()
+        }
 return(
     <>
     <div className='container'>
-        <div className='row'>
-            <div className='categiries'>
+        <NumberOfJokes/>
+        <div className='row gy-5'>
 
+            <div className='categories'>
+                {/* <GetCategories path='categories'/> */}
             </div>
-            <div className='top col-6'>
-                <div className='random col-12 justify-content-center'>
+
+            <div className='top col-12 mt-5'>
+                <div className='random col-12'>
                     <button 
                     type='button'
-                    className='btn btn-danger mt-4 mb-5 offset-md-1'
+                    className='btn btn-danger mt-4 mb-5'
                     onClick={()=>{
                         setJokes(joke!==true)
-                        setRandomJoke(<CreateURL path='random'/>)
-                    }}>Get random goke</button>
-                    <div>{randomJoke}</div>
+                        setRandomJoke(<GetRandomJoke path='random'/>)
+                    }}>Get random joke</button>
+                    <div className ='col align-self-end'>{randomJoke}</div>
                 </div>
             </div>
+
         </div>
         
     </div>

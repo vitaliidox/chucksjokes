@@ -1,19 +1,34 @@
 .randomJoke{
     font-weight: bold;
     text-align: center;
-
 }
+
 .randomJoke:hover{
-    text-decoration: none;
-    
+    text-decoration: none; 
 }
 
 .body{
-    background-image: url('https://cdn.flickeringmyth.com/wp-content/uploads/2020/03/chuck-norris.jpg');
-    background-size: 100%;
+    background: url('https://www.grunge.com/img/gallery/false-facts-about-chuck-norris-you-always-thought-were-true/intro.jpg')no-repeat center center fixed;
+    background-size: cover;
 }
-
 
 .random{
     justify-content: center!important;
+}
+
+.counter{
+    background-color: rgba(0, 0, 0, 0.541);
+    width: 30vh;
+    text-align: center;
+    border-radius: 5px;
+    border-style: hidden;
+    color: wheat;
+    transition: ease-in-out 0.4s;
+    position: absolute;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+.counter:hover{
+    font-size: 45px;
+    color:#DC3545;
 }

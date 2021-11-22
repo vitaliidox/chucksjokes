@@ -2,7 +2,7 @@ import React, {useEffect, useState, useContext} from "react";
 import { Context } from "../Context";
 
 
-function CreateURL(props) {
+function GetRandomJoke(props) {
 
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null)
@@ -15,9 +15,9 @@ function CreateURL(props) {
         fetch(`${urljoke}${props.path}`)
         .then((res)=>res.json())
         .then((result)=>{
-            setData(result)
+            setData(result.value)
             setIsLoaded(true)
-            console.log(result)
+            // console.log(result)
         },
         (error)=>{
             setIsLoaded(true)
@@ -36,18 +36,20 @@ function CreateURL(props) {
         onClick={
         ()=> hideDiv()
             }>
-            <div className="container">
-                <div className="row justify-content-center">
+            
+                <div className="row justify-content-end">
+                <div className="col-4 mt-5">
                     
-                    <div style={styles} className="alert alert-danger justify-content-center" role="alert">
-                        {data.value}
+                    <div style={styles} className="alert alert-danger justify-content-center " role="alert">
+                        {data.joke}
                         
                     </div>
                 </div>
-            </div>
+                </div>
+           
     </a></>
 
 }
 
 
-export default CreateURL
+export default GetRandomJoke

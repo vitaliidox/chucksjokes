@@ -10,21 +10,24 @@ function GetApi(props) {
     const [randomJoke, setRandomJoke] = useState()
     const [joke, setJokes] = useState(false)
     const [active, setActive] = useState('')
-    useEffect(()=>{
-        <GetRandomJoke path='random' joke={joke}/>
+    const [numbJokes, setNumbJokes] = useState()
 
-    },[])
-        function ActivateCategories() {
-            if(active==='active'){
-                setActive('')
-            }else{setActive('active')}
-            console.log()
-        }
+    useEffect(()=>{
+        <GetRandomJoke path='random'/>
+    },[joke])
+        // function ActivateCategories() {
+        //     if(active==='active'){
+        //         setActive('')
+        //     }else{setActive('active')}
+            
+        // }
+
+  console.log(numbJokes)
 return(
     <>
     <div className='container'>
         <NumberOfJokes/>
-        <div className='row gy-5'>
+        <div className='row'>
 
             <div className='categories'>
                 {/* <GetCategories path='categories'/> */}
@@ -33,13 +36,16 @@ return(
             <div className='top col-12 mt-5'>
                 <div className='random col-12'>
                     <button 
-                    type='button'
-                    className='btn btn-danger mt-4 mb-5'
-                    onClick={()=>{
-                        setJokes(joke!==true)
-                        setRandomJoke(<GetRandomJoke path='random'/>)
+                        type='button'
+                        className='btn btn-danger mt-4 mb-4'
+                        onClick={()=>{
+                            setJokes(joke!==true)
+                            setRandomJoke(<GetRandomJoke path='random/' numb={numbJokes}/>)
                     }}>Get random joke</button>
-                    <div className ='col align-self-end'>{randomJoke}</div>
+                    <input onChange={ (e) => {if (e.target.value>0){setNumbJokes(e.target.value)}
+                else{setNumbJokes('')}
+                }} className='input col-1 m-5' type='number' min='1'/>
+                    <div className ='offset-2 align-self-end'>{randomJoke}</div>
                 </div>
             </div>
 

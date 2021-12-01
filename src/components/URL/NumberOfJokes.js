@@ -30,7 +30,7 @@ const [error, setError] = useState(null)
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="counter justify-content-center">
-                    <h3>The number of jokes:</h3> <span className='countersNumber'>{count.value}</span>
+                    The number of jokes: {count.value}
                     </div>
                 </div>
             </div>

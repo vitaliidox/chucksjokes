@@ -10,7 +10,7 @@ function GetApi(props) {
     const [randomJoke, setRandomJoke] = useState()
     const [joke, setJokes] = useState(false)
     const [active, setActive] = useState('')
-    const [numbJokes, setNumbJokes] = useState()
+    const [lastPath, setLastPath] = useState()
 
     useEffect(()=>{
         <GetRandomJoke path='random'/>
@@ -22,7 +22,7 @@ function GetApi(props) {
             
         // }
 
-  console.log(numbJokes)
+  console.log(lastPath)
 return(
     <>
     <div className='container'>
@@ -40,10 +40,10 @@ return(
                         className='btn btn-danger mt-4 mb-4'
                         onClick={()=>{
                             setJokes(joke!==true)
-                            setRandomJoke(<GetRandomJoke path='random/' numb={numbJokes}/>)
+                            setRandomJoke(<GetRandomJoke path='random' lastPath={lastPath}/>)
                     }}>Get random joke</button>
-                    <input onChange={ (e) => {if (e.target.value>0){setNumbJokes(e.target.value)}
-                else{setNumbJokes('')}
+                    <input onChange={ (e) => {if (e.target.value>0){setLastPath('/'+e.target.value)}
+                else{setLastPath('')}
                 }} className='input col-1 m-5' type='number' min='1'/>
                     <div className ='offset-2 align-self-end'>{randomJoke}</div>
                 </div>

@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {useState} from 'react'
 import GetApi from "./components/GetApi";
 import GetRandomJoke from "./components/URL/GetRandomJoke";
 import { Context } from "./components/Context";
 import "./Style.css"
+
 
 function App() {
 
@@ -12,14 +13,12 @@ const [data, setData] = useState({})
 return (
     <>
     <Context.Provider value={{urljoke,setUrljoke, data, setData}}>
-     <Router>
-        <Switch>
-          <GetRandomJoke path='random'/>
-          <Route path="/" exact>
-            <GetApi/>
-          </Route>
-        </Switch>
-      </Router>
+        <Router>
+          <Routes>
+            <Route path="random" elemennt={<GetRandomJoke path='random'/>}/>
+            <Route path="/" exact element={<GetApi/>}/>   
+          </Routes>
+        </Router>
       </Context.Provider>
     </>
   );

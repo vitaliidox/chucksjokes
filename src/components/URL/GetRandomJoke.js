@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useContext} from "react";
 import { Context } from "../Context";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
 
 
 function GetRandomJoke(props) {
@@ -7,7 +8,7 @@ function GetRandomJoke(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null)
     const path = props.path
-    const numb = props.numb
+    const numb = props.lastPath
     const {urljoke, setUrljoke} = useContext(Context)
     const {data, setData} = useContext(Context)
     const [styles, setStyles] = useState()
@@ -31,7 +32,7 @@ function GetRandomJoke(props) {
     function hideDiv() {
         setStyles({display:"none"})
     }
-    console.log(data)
+    console.log(numb)
     
 //    const NumberJoke = ()=> {
 //         data.forEach(element => {
@@ -44,7 +45,7 @@ function GetRandomJoke(props) {
    
 
     return <>
-    <a href="#" 
+    <Link to="#" 
         className="randomJoke"
         onClick={
         ()=> hideDiv()
@@ -66,7 +67,7 @@ function GetRandomJoke(props) {
                 </div>
                 </div>
            
-    </a></>
+    </Link></>
 
 }
 

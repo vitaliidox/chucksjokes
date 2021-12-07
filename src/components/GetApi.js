@@ -42,7 +42,7 @@ return(
                     <label className='labelForInput' for="numberJokes">Number of jokes:</label>
                     <input id='numberJokes' onChange={ (e) => {if (e.target.value>0){setLastPath('/'+e.target.value)}
                         else{setLastPath('')}
-                        }} className='input col-1 m-5' type='number' min='1'/>
+                        }} className='input col-1 m-5' type='number' min='0'/>
 
                     <label className='labelForInput' for="idJokes">Id:</label>
                     <input id="idJokes" onChange={ (e) => {if (e.target.value>0){setPath(e.target.value)}

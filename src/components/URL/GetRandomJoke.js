@@ -32,7 +32,7 @@ function GetRandomJoke(props) {
     function hideDiv() {
         setStyles({display:"none"})
     }
-    console.log(numb)
+
     
 //    const NumberJoke = ()=> {
 //         data.forEach(element => {
@@ -52,8 +52,8 @@ function GetRandomJoke(props) {
         
             }>
             
-                <div className="row justify-content-end">
-                <div className="col-4 mt-5">
+                <div className='justify-content-end'>
+                <div className="col-12 mt-1">
                     
                     <div style={styles} className="alert alert-light justify-content-center " role="alert">
                         {data.joke}

@@ -16,6 +16,14 @@
     justify-content: center!important;
 }
 
+.labelForInput{
+    color: white;
+    font-weight: bold;
+}
+#idJokes{
+    margin-left: 5px !important;
+}
+
 .counter{
     background-color: rgba(0, 0, 0, 0.397);
     width: 45vh;
@@ -32,4 +40,14 @@
 .counter:hover{
     font-size: 35px;
     color:#DC3545;
+}
+
+.list-group-item.active {
+    background-color:#DC3545;
+    border-color:#DC3545;
+
+}
+.list-group-item{
+    border-radius:5px;
+    margin: 5px;
 }
